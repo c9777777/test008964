@@ -1,1 +1,6 @@
-
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/GoogleCloudPlatform/cloud-builders']
+  env: ['PROJECT_ROOT=hello']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/my-project-id/myimage', '.']
